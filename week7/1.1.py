@@ -1,9 +1,9 @@
 class Vector():
     def __init__(self, x, y, z):
+        assert isinstance(x, int) or isinstance(y, int) or isinstance(z, int) or isinstance(x, float) or isinstance(y, float) or isinstance(z, float)
         self.x = x
         self.y = y
         self.z = z
-        assert isinstance(x, int) or isinstance(y, int) or isinstance(z, int) or isinstance(x, float) or isinstance(y, float) or isinstance(z, float)
     def __abs__(self):
         return (self.x**2 + self.y**2 + self.z**2)**0.5
     def __mul__(self, other):
