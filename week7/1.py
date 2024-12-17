@@ -17,14 +17,16 @@ class Vector():
         elif isinstance(other, int) or isinstance(other, float):
             return Vector(self.x + other, self.y + other, self.z + other)
     def __radd__(self, other):
-        print('error')
+        assert isinstance(other, Vector), 'Недопустимая операция'
+        return Vector(self.x + other, self.y + other, self.z + other)
     def __sub__(self, other):
         if isinstance(other, Vector):
             return Vector(self.x - other.x, self.y - other.y, self.z - other.z)
         elif isinstance(other, int) or isinstance(other, float):
             return Vector(self.x - other, self.y - other, self.z - other)
     def __rsub__(self, other):
-        return None
+        assert isinstance(other, Vector), 'Недопустимая операция'
+        return Vector(-self.x+other, -self.y +other, -self.z+other)
     def __str__(self):
         return f'({self.x},{self.y},{self.z})'
 v = Vector(1,2,3)
