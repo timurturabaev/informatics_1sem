@@ -1,7 +1,13 @@
-g=[]
-n=int(input())
-for k in range(n):
-    g.append(list(map(int,input().split())))
+#g=[]
+#n=int(input())
+#for k in range(n):
+#    g.append(list(map(int,input().split())))
+
+gr=[[0,1,0,2],
+    [1,0,0,4],
+    [0,0,0,3],
+    [2,4,3,0]]
+n=len(gr[0])
 
 def prim(g):
     mst = []
@@ -23,4 +29,4 @@ def prim(g):
     print(sum)
     return mst
 
-print(prim(g))
+print(prim(gr))

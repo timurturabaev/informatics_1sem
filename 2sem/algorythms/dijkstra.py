@@ -1,7 +1,18 @@
-g=[]
-n=int(input())
-for i in range(n):
-    g.append(list(map(int,input().split())))
+#g=[]
+#n=int(input())
+#for i in range(n):
+#    g.append(list(map(int,input().split())))
+
+g=[[0,0,0,2],
+    [1,0,0,4],
+    [0,0,0,2],
+    [1,0,3,0]]
+gr=[[0, 1, 1, 0, 0],
+[0, 0, 0, 1, 0],
+[0, 1, 0, 1, 0],
+[0, 0, 1, 0, 0],
+[0, 0, 0, 1, 0]]
+n=len(gr[0])
 
 def dijkstra(graph,sv,ev):
     dist=[]
@@ -24,4 +35,4 @@ def dijkstra(graph,sv,ev):
         visited.add(v)
     return dist[ev]
 
-print(dijkstra(g,2,4))
+print(dijkstra(gr,1,3))
